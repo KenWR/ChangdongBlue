@@ -1,18 +1,7 @@
 # ChangDong_Blue
 
-## 팀원 : 양시현 차진웅 황상하 정지원 윤창현 윤상훈
-
 ## 01/25 할일
 
-- 서버 및 db - 상하님
-- 서버 스태틱 경로 설정 - 창현
-- 페이지 전체 디자인 메뉴등 - 시현님,진웅님 [상훈님디자인](https://github.com/nowon-kdt/ChangDong_Blue/blob/832068d8a8133ed69daece86331aa4d8d29a2f62/src/main/resources/상훈님이작업하신것들)
-- ptt - 진웅님, 지원님
-- 챗봇 답변 등록 - 지원님
-- 네이버 api 연동 누구계정할지 - 아무나
-- 학생출석 연관관계 - 시현님
-
----
 
 # 변경사항
 
@@ -39,11 +28,11 @@
 
 ### 01/10
 
-- 대부분 브랜치 통합 + 지원님 챗봇 통합
+- 대부분 브랜치 통합 +  챗봇 통합
 
 ### 01/06
 
-- 상하님이 application-mariadb.yml 에서 작성한 file 부분을 [application-file](https://github.com/nowon-kdt/ChangDong_Blue/blob/7f28ce4e90a5150745b3f5395235789083aaa23a/src/main/resources/application-file.yml) 로 만들고 [application](https://github.com/nowon-kdt/ChangDong_Blue/blob/7f28ce4e90a5150745b3f5395235789083aaa23a/src/main/resources/application.yml)안 profile에 추가함
+-  application-mariadb.yml 에서 작성한 file 부분을 [application-file](https://github.com/nowon-kdt/ChangDong_Blue/blob/7f28ce4e90a5150745b3f5395235789083aaa23a/src/main/resources/application-file.yml) 로 만들고 [application](https://github.com/nowon-kdt/ChangDong_Blue/blob/7f28ce4e90a5150745b3f5395235789083aaa23a/src/main/resources/application.yml)안 profile에 추가함
 - phone 중복허용 [TeacherEntity](https://github.com/nowon-kdt/ChangDong_Blue/blob/7f28ce4e90a5150745b3f5395235789083aaa23a/src/main/java/cdb/domain/entity/TeacherEntity.java)
   [EmployeeEntity](https://github.com/nowon-kdt/ChangDong_Blue/blob/7f28ce4e90a5150745b3f5395235789083aaa23a/src/main/java/cdb/domain/entity/EmployeeEntity.java)
 
@@ -51,17 +40,17 @@
 
 # 역할분담
 
-- 양시현님 : 보드컨트롤러 , 시큐리티 필터, DB ,강의컨트롤러, 학생출석, 사이드메뉴,탑메뉴,인덱스등 전역 페이지 디자인 및 인덱스 자바스크립트, 전자결재 시스템 구현
+- 양xx님 : 보드컨트롤러 , 시큐리티 필터, DB ,강의컨트롤러, 학생출석, 사이드메뉴,탑메뉴,인덱스등 전역 페이지 디자인 및 인덱스 자바스크립트, 전자결재 시스템 구현
 
-- 차진웅님 : 학생컨트롤러 ,강의컨트롤러, 학생출석,직원평가 헤더등 페이지 디자인, 전자결재 시스템 구현
+- 차xx님 : 학생컨트롤러 ,강의컨트롤러, 학생출석,직원평가 헤더등 페이지 디자인, 전자결재 시스템 구현
 
-- 정지원님 : 챗봇, DB, 챗봇에 코모란구현, 챗봇 자바스크립트, 챗봇, 학생출석 기능 및 페이지 구현
+- 본인 : 챗봇, DB, 챗봇에 코모란구현, 챗봇 자바스크립트, 챗봇, 학생출석 기능 및 페이지 구현
 
-- 황상하님 : 강사컨트롤러, 파일업로드, 서버 및 CICD, 파일업로드 페이지등 디자인, 전자결재 시스템 구현
+- 황xx님 : 강사컨트롤러, 파일업로드, 서버 및 CICD, 파일업로드 페이지등 디자인, 전자결재 시스템 구현
 
-- 윤상훈님 : 공지사항 페이지, 로그인페이지, 등록페이지등 디자인
+- 윤xx님 : 공지사항 페이지, 로그인페이지, 등록페이지등 디자인
 
-- 윤창현 : DB, 시큐리티, 리팩토링, 서버 및 CICD, 기타유틸 및 기능개선, 버전관리
+- 윤xx : DB, 시큐리티, 리팩토링, 서버 및 CICD, 기타유틸 및 기능개선, 버전관리
 
 ---
 
