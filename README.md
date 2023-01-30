@@ -66,7 +66,8 @@
 ---
 
 현재 엔티티 상황
-![alt](/%EC%B0%B8%EA%B3%A0%20%EC%97%94%ED%8B%B0%ED%8B%B0.png)
+![참고 엔티티](https://user-images.githubusercontent.com/111475563/215385278-99f4e86a-c8de-4337-b1e4-911bbcd6cb4e.png)
+
 
 ---
 
