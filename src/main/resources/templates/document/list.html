@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html
+  lang="ko-KR"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+  th:replace="~{layout/comm-layout :: commLayout(~{::head},~{::main})}"
+>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/css/common/list.css" />
+    <title>문서 리스트 출력 페이지</title>
+  </head>
+  <body>
+    <main>
+      <form method="post" th:action="@{/docList}">
+        <select name="docStatus" onchange="changeStatus">
+          <option>===상태===</option>
+          <option value="DEFAULT">상신</option>
+          <option value="APPROVAL">승인</option>
+          <option value="HOLD">보류</option>
+          <option value="REJECT">반려</option>
+        </select>
+        <button class="button">선택</button>
+      </form>
+      <table>
+        <tr>
+          <th>문서번호</th>
+          <th>상태</th>
+          <th>타입</th>
+          <th>유형</th>
+          <th>상신일</th>
+          <th>수정일</th>
+        </tr>
+        <tbody>
+          <tr th:each="d : ${doc}">
+            <td th:text="${d.title}">제목</td>
+            <td th:text="${d.docStatus}">상태</td>
+            <td th:text="${d.no}">문서번호</td>
+            <td th:text="${d.docType}">타입</td>
+            <td th:text="${d.startDate}">타입</td>
+            <td th:text="${d.endDate}">타입</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>

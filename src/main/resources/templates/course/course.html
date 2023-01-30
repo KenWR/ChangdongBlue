@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html
+  lang="ko-KR"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+  th:replace="~{layout/comm-layout :: commLayout(~{::head},~{::main})}"
+>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/css/common/list.css" />
+    <title>Insert title here</title>
+  </head>
+  <body>
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <th>과정명</th>
+            <th>강의실</th>
+            <th>시작일</th>
+            <th>종료일</th>
+            <th>선생님</th>
+          </tr>
+        </thead>
+        <tbody id="students-list">
+          <tr th:each="c : ${course}" class="std">
+            <td>
+              <a th:href="|/check/att/${c.no}|" th:text="${c.title}">과정명</a>
+            </td>
+            <td th:text="${c.roomNum}">강의실</td>
+            <td class="onTime" th:text="${c.startDate}">시작일</td>
+            <td class="offTime" th:text="${c.endDate}">종료일</td>
+            <td class="teacher" th:text="${c.name}">선생님</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>

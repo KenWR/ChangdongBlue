@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html
+  lang="ko-KR"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+  th:replace="~{layout/comm-layout :: commLayout(~{::head},~{::main})}"
+>
+  <head>
+    <title>Insert title here</title>
+  </head>
+  <body>
+    <main>
+      <h1>학생 출석 정보 변경 페이지</h1>
+      <form th:action="@{/status}" method="post"></form>
+    </main>
+  </body>
+</html>

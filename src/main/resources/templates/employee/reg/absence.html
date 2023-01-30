@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html
+  lang="ko-KR"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+  th:replace="~{layout/comm-layout :: commLayout(~{::head},~{::main})}"
+>
+  <head>
+    <title>휴가/연차 등록페이지</title>
+  </head>
+  <body>
+    <main>
+      <table>
+        <tr>
+          <td>문서번호</td>
+          <td>문서제목</td>
+          <td>작성자</td>
+        </tr>
+        <tr th:each="d : ${doc}">
+          <td th:text="${d.no}"></td>
+          <td>
+            <a th:text="${d.title}" th:href="@{/emp/reg/absence/detail/(no=${d.no})}"></a>
+          </td>
+          <td th:text="${d.name}"></td>
+        </tr>
+      </table>
+    </main>
+  </body>
+</html>

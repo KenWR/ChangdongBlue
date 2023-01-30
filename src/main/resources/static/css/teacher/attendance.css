@@ -1,0 +1,29 @@
+.attendance_check_wrap {
+  display: flex;
+}
+
+.attendance_check {
+  flex: 1;
+}
+
+.attendance_title_inner {
+  height: 40px;
+}
+
+.attendance_title {
+  display: inline-block;
+  position: relative;
+  font-weight: 700;
+
+  font-size: 24px;
+  line-height: 40px;
+  letter-spacing: -0.01em;
+}
+
+.attendance_search_wrap {
+  min-width: 700px;
+  max-width: 710px;
+}
+th {
+  background-color: #81cbf8;
+}

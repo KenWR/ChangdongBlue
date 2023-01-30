@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html
+  lang="ko-KR"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+  th:replace="~{layout/comm-layout :: commLayout(~{::head},~{::main})}"
+>
+  <head>
+    <title>학생 출결 관리 페이지</title>
+    <style type="text/css">
+      table {
+        width: 500px;
+      }
+      tr {
+        border-bottom: 1px solid #444;
+      }
+      td {
+        height: 40px;
+        text-align: center;
+        vertical-align: middle;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <td>학생번호</td>
+            <td>이름</td>
+            <td>출결현황</td>
+            <td>출석일</td>
+            <td>출석시간</td>
+            <td>퇴실시간</td>
+          </tr>
+        </thead>
+        <tbody id="students-list">
+          <tr th:each="a : ${att}">
+            <td th:text="${a.no}"></td>
+            <td th:text="${a.name}"></td>
+            <td th:text="${a.status}"></td>
+            <td th:text="${a.day}"></td>
+            <td th:text="${a.onTime}"></td>
+            <td th:text="${a.offTime}"></td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>

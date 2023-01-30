@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html
+  lang="ko-KR"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+  th:replace="~{layout/comm-layout :: commLayout(~{::head},~{::main})}"
+>
+  <head>
+    <title>학생 수강등록 페이지</title>
+    <script th:src="@{/js/students/course.js}"></script>
+  </head>
+  <body>
+    <main>
+      <table>
+        <tr>
+          <td>학생번호</td>
+          <td>이름</td>
+          <td>전화번호</td>
+          <td>주소</td>
+        </tr>
+      </table>
+      <table>
+        <tr th:each="s : ${list}">
+          <td th:text="${s.no}"></td>
+          <td th:text="${s.name}"></td>
+          <td th:text="${s.phone}"></td>
+          <td th:text="${s.addr}"></td>
+          <td>
+            <form method="post">
+              <select id="cno" class="cno" name="cno">
+                <!-- 코스no 넘겨줌 -->
+                <option th:each="c : ${course}" th:value="${c.no}" th:text="${c.title}"></option>
+              </select>
+              <input type="hidden" name="sno" th:value="${s.no}" /><!-- 학생no 넘겨줌 -->
+              <button type="submit">수강등록</button>
+            </form>
+          </td>
+        </tr>
+      </table>
+    </main>
+  </body>
+</html>

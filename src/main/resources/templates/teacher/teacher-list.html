@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html
+  lang="ko-KR"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+  th:replace="~{layout/comm-layout :: commLayout(~{::head},~{::main})}"
+>
+  <head>
+    <title>Index Page</title>
+    <script th:src="@{/js/attendance/att.js}"></script>
+    <link rel="stylesheet" type="text/css" href="/css/common/list.css" />
+  </head>
+  <body>
+    <main>
+      <p>강사리스트</p>
+      <form id="form" method="post" th:action="@{/teacher/list}">
+        <table>
+          <tr>
+            <th>강사명</th>
+            <th>연락처</th>
+            <th>주소</th>
+            <!-- <th>출석</th> -->
+          </tr>
+          <tr th:each="dto:${list}" th:name="AttendanceStudent">
+            <td th:text="${dto.name}"></td>
+            <td th:text="${dto.phone}"></td>
+            <td th:text="${dto.addr}"></td>
+            <!--  <td><input name="check" type="checkbox" /></td> -->
+          </tr>
+        </table>
+      </form>
+      <button>확인</button>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html
+  lang="ko-KR"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+  th:replace="~{layout/comm-layout :: commLayout(~{::head},~{::main})}"
+>
+  <head>
+    <title>직원 등록 페이지</title>
+    <script th:src="@{/js/file/fileUpload.js}"></script>
+    <link rel="stylesheet" type="text/css" href="/css/common/reg.css" />
+  </head>
+  <body>
+    <main>
+      <form th:action="@{/emp/reg}" method="post" enctype="multipart/form-data">
+        <table>
+          <tr>
+            <td>이미지</td>
+            <td>
+              <div>
+                <label class="img" for="defImg">+</label>
+                <input id="defImg" class="gImg" type="file" name="gImg" onchange="gImgChanged(this)" />
+                <input type="hidden" class="newName" name="newName" />
+                <input type="hidden" class="orgName" name="orgName" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>이름</td>
+            <td><input type="text" name="name" placeholder="이름을 입력하세요" /></td>
+          </tr>
+          <tr>
+            <td>이메일</td>
+            <td><input type="text" name="email" placeholder="e-mail을 입력하세요" /></td>
+          </tr>
+          <tr>
+            <td>연락처</td>
+            <td><input type="text" name="phone" placeholder="연락처를 입력하세요" /></td>
+          </tr>
+          <tr>
+            <td>주소</td>
+            <td><input type="text" name="addr" placeholder="주소를 입력하세요" /></td>
+          </tr>
+          <tr>
+            <td>비밀번호</td>
+            <td><input type="password" name="password" placeholder="패스워드를 입력하세요" /></td>
+          </tr>
+          <tr>
+            <td>생년월일</td>
+            <td><input type="date" name="dateOfBirth" placeholder="생년월일" /></td>
+          </tr>
+          <tr>
+            <td colspan="1">
+              <button class="button">직원등록</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </main>
+  </body>
+</html>

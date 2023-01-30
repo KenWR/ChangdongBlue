@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html
+  lang="ko-KR"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+  th:replace="~{layout/comm-layout :: commLayout(~{::head},~{::main})}"
+>
+  <head>
+    <title>Teacher Board Page</title>
+    <link rel="stylesheet" th:href="@{/webjars/fullcalendar/main.min.css}" />
+    <script th:src="@{/webjars/fullcalendar/main.min.js}"></script>
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        const calendarEl = document.getElementById("calendar");
+        const calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: "dayGridMonth",
+          height: 920,
+          events: function (info, successCallback, failureCallback) {
+            $.ajax({
+              url: "/calendar/data",
+              type: "GET",
+              dataType: "json",
+              headers,
+              success: function (result) {
+                var events = [];
+                var color;
+                for (var i = 0; i < result.length; i++) {
+                  //console.log("실행중" + result[i].title);
+                  if (result[i].status == "ABSENCE") {
+                    color = "red";
+                  } else if (result[i].status == "VACATION") {
+                    color = "blue";
+                  }
+                  events.push({
+                    title: result[i].title,
+                    start: result[i].start,
+                    end: result[i].end,
+                    color: color,
+                  }); //end : events.push
+                } //end : for
+                //console.log(events);
+                //calendar.render()
+                successCallback(events);
+              }, //end : success
+            }); //end : ajax
+          }, //end : events
+        }); //end : calendar
+        calendar.render();
+      }); //end : addEventListener
+    </script>
+  </head>
+  <body>
+    <main>
+      <div id="calendar"></div>
+    </main>
+  </body>
+</html>

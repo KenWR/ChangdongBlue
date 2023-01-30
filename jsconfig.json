@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "allowJs": true,
+    "checkJs": true,
+    "target": "ES2021",
+    "baseUrl": "/src/main/resources",
+    "lib": ["ES2021"]
+  },
+  "typeAcquisition": { "enable": true, "include": ["jquery", "web", "dom", "es7", "es2021"] },
+  "exclude": ["node_modules", "**/node_modules/*", "bin", "**/bin/*", "build", "**/build/*"],
+  "include": ["src/main/resources/"]
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html
+  lang="ko-KR"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+  th:replace="~{layout/comm-layout :: commLayout(~{::head},~{::main})}"
+>
+  <head>
+    <title>Notice Page</title>
+    <link rel="stylesheet" href="/css/board/notice.css" />
+  </head>
+  <body>
+    <main>
+      <div class="board_title_wrap">
+        <div class="board_title_inner mt-3">
+          <h2 class="board_title">공지사항</h2>
+        </div>
+      </div>
+      <div class="notice_board_wrap mt-3">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>번호</th>
+              <th>제목</th>
+              <th>등록일</th>
+              <th>조회수</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>공지사항 테스트1</td>
+              <td>2023-01-09</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>공지사항 테스트2111</td>
+              <td>2023-01-06</td>
+              <td>100</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- 
+      <div class="board_post_button_wrap">
+        <div class="board_post_button">
+          <button type="button" class="btn btn-outline-primary">Post</button>
+        </div>
+      </div>
+	-->
+      <div class="pagination_section_wrap">
+        <div class="pagination_section">
+          <ul class="pagination">
+            <li class="page-item disabled">
+              <a class="page-link" href="#">Previous</a>
+            </li>
+            <li class="page-item active">
+              <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">5</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html
+  lang="ko-KR"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+  th:replace="~{layout/comm-layout :: commLayout(~{::head},~{::main})}"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="/css/doc/detail.css" />
+    <script th:src="@{/js/doc/docdetail.js}"></script>
+    <title>전자문서결재관리</title>
+  </head>
+  <body>
+    <main>
+      <table>
+        <tr>
+          <th>문서번호</th>
+          <th>제목</th>
+          <th>타입</th>
+          <th>선택</th>
+        </tr>
+        <tbody>
+          <tr th:each="d : ${doc}">
+            <td th:text="${d.no}"></td>
+            <td th:text="${d.title}">제목</td>
+            <td th:text="${d.docType}">타입</td>
+            <td>
+              <select class="docStatus" name="docStatus">
+                <option disabled selected="selected">=== 문서상태선택 ===</option>
+                <th:block th:each="dStatus:${T(cdb.domain.etc.enums.DocStatus).values()}">
+                  <option class="docStatus" th:value="${dStatus.name}" th:text="${dStatus.korDocStatus}"></option>
+                </th:block>
+              </select>
+            </td>
+            <td class="button">
+              <input class="docNo" type="hidden" th:value="${d.no}" />
+              <button class="change-doc-stat" onclick="changeDocStat(this)">등록</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>

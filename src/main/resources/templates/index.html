@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+  th:replace="~{layout/comm-layout :: commLayout(~{::head},~{::main})}"
+>
+  <head>
+    <title>Index Page</title>
+    <link rel="stylesheet" th:href="@{/css/home/home.css}" />
+    <link rel="stylesheet" th:href="@{/css/common/reset.css}" />
+    <!--/* <link rel="stylesheet" th:href="@{/webjars/fullcalendar/main.min.css}" />
+    <script th:src="@{/webjars/fullcalendar/main.min.js}"></script>
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        const calendarEl = document.getElementById("calendar");
+        const calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: "dayGridMonth",
+          height: 440,
+          events: function (info, successCallback, failureCallback) {
+            $.ajax({
+              url: "/calendar/data",
+              type: "GET",
+              dataType: "json",
+              headers,
+              success: function (result) {
+                var events = [];
+                var color;
+                for (var i = 0; i < result.length; i++) {
+                  //console.log("실행중" + result[i].title);
+                  if (result[i].status == "ABSENCE") {
+                    color = "red";
+                  } else if (result[i].status == "VACATION") {
+                    color = "blue";
+                  }
+                  events.push({
+                    title: result[i].title,
+                    start: result[i].start,
+                    end: result[i].end,
+                    color: color,
+                  }); //end : events.push
+                } //end : for
+                //console.log(events);
+                //calendar.render()
+                successCallback(events);
+              }, //end : success
+            }); //end : ajax
+          }, //end : events
+        }); //end : calendar
+        calendar.render();
+      }); //end : addEventListener
+    </script> */-->
+  </head>
+  <body>
+    <main>
+      <!--/* <div id="home">
+        <div class="lt_wrap">
+          프로필:로그인한 계정 DB연동
+          <div class="name">
+            <span sec:authentication="principal.no">유저 PK</span>
+            <div>
+            <span sec:authentication="name">유저 이름</span>
+            </div>
+            <div>
+            <span sec:authentication="principal.email">유저 이메일</span>
+            </div>
+          </div>
+        </div>
+        <div class="rt_wrap">
+          공지사항으로이동
+          <div class="title_wrap">
+            <a href="/students/att/on">개설강좌</a>
+          </div>
+          <table>
+          <tr>
+              <td>과정명</td>
+              <td>강의실</td>
+              <td>시작일</td>
+              <td>종료일</td>
+            </tr>
+            <tr th:each="c : ${course}">
+              <td><a th:text="${c.title}">과정명</a></td>
+              <td th:text="${c.roomNum}">강의실</td>
+              <td class="onTime" th:text="${c.startDate}">시작일</td>
+              <td class="offTime" th:text="${c.endDate}">종료일</td>
+            </tr>
+          </table>
+        </div>
+        <div class="lb_wrap">
+          <div id="calendar"></div>
+        </div>
+        <div class="rb_wrap">
+          미정
+        </div>
+      </div> */-->
+    </main>
+  </body>
+</html>
+<!--/*-->
+<!--/*/
+  <!DOCTYPE html>
+  <html
+  lang="ko-KR"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+  th:replace="~{layout/comm-layout :: commLayout(~{::head},~{::main})}"
+  >
+  <head>
+
+  </head>
+  <body>
+  </body>
+  </html>
+  /*/-->
+<!--*/-->

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html
+  lang="ko-KR"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+  th:replace="~{layout/comm-layout :: commLayout(~{::head},~{::main})}"
+>
+  <head>
+    <title>결재신청</title>
+    <link rel="stylesheet" type="text/css" href="/css/doc/reg.css" />
+  </head>
+  <body>
+    <main>
+      <form th:action="@{/doc/reg}" method="post">
+        <h3>
+          <span>문서종류</span>
+          <select name="docType">
+            <option disabled selected="selected">=== 문서종류선택 ===</option>
+            <th:block th:each="dType:${T(cdb.domain.etc.enums.DocType).values()}">
+              <option th:value="${dType.name}" th:text="${dType.korDocType}"></option>
+            </th:block>
+          </select>
+        </h3>
+        <p>
+          <span>제목</span>
+          <input type="text" name="title" placeholder="제목입력" />
+        </p>
+        <table class="sign">
+          <tr>
+            <th rowspan="2">결재</th>
+            <td>원장</td>
+            <td>인사담당자</td>
+          </tr>
+          <tr class="none">
+            <td><span>d</span></td>
+            <td><span>d</span></td>
+          </tr>
+        </table>
+        <table>
+          <!-- <tr>
+            <td class="tit">부서</td>
+            <td colspan="3"><input type="text" /></td>
+          </tr> -->
+          <tr>
+            <td class="writer"><span>작성자</span></td>
+            <td><input type="text" th:value="${#authentication.name}" readonly="readonly" /></td>
+            <!--  <td class="phone"><span>연락처</span></td>
+            <td><input type="text" /></td> -->
+          </tr>
+          <tr>
+            <td class="date"><span>기간</span></td>
+            <td colspan="3">
+              <span>시작일</span>
+              <input type="date" name="startDate" />
+              <span>종료일</span>
+              <input type="date" name="endDate" />
+            </td>
+          </tr>
+          <tr>
+            <td class="content"><span>세부사항</span></td>
+          </tr>
+          <tr>
+            <td colspan="3"><textarea rows="10" cols="70" name="content" placeholder="내용입력"></textarea></td>
+          </tr>
+        </table>
+        <div>
+          <span>작성일자</span>
+          <input type="text" th:value="${localDate}" readonly="readonly" />
+        </div>
+        <div>
+          <button class="button">작성하기</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

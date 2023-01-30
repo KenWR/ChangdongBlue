@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html
+  lang="ko-KR"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+  th:replace="~{layout/comm-layout :: commLayout(~{::head},~{::main})}"
+>
+  <head>
+    <title>네이버</title>
+    <script th:src="@{/js/navvv.js}" defer></script>
+    <script th:inline="javascript">
+      $(function () {
+        const codeA = `[[$code]]`;
+        const codeB = "[[$code]]";
+        $.ajax({
+          type: "POST",
+          url: "url",
+          headers,
+          data: { code: codeA, codeB: codeB },
+          success: function (response) {},
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <main>
+      <table>
+        <tr th:each="dto:${list}">
+          <td th:text="${dto.orgUnitId}"></td>
+          <td th:text="${dto.orgUnitName}"></td>
+          <td th:text="${dto.orgUnitName}"></td>
+        </tr>
+      </table>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html
+  lang="ko-KR"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+  th:replace="~{layout/comm-layout :: commLayout(~{::head},~{::main})}"
+>
+  <head>
+    <title>학생등록페이지</title>
+  </head>
+  <body>
+    <main>
+      <form th:action="@{/student/reg}" method="post">
+        <div class="container">
+          <div class="enroll_member_wrap">
+            <div class="title">학생등록페이지</div>
+            <div class="form-group row">
+              <label for="inputEmail" class="col-sm-2 col-form-label">이름</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" name="name" placeholder="이름" />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputName" class="col-sm-2 col-form-label">전화번호</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" name="phone" placeholder="전화번호" />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPassword" class="col-sm-2 col-form-label">성별</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" name="gender" placeholder="성별" />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">생년월일</label>
+              <div class="col-sm-10">
+                <input type="date" class="form-control" name="dateOfBirth" placeholder="생년월일" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="submit_btn">
+          <button type="submit" class="btn btn-primary mb-2">Submit</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

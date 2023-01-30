@@ -1,0 +1,16 @@
+body {
+  width: 1650px;
+  height: 970px;
+}
+
+#main-sidebar-wrap {
+  width: 1650px;
+  height: 920px;
+}
+
+main {
+  float: right;
+  background-color: white;
+  width: 1440px;
+  height: 920px;
+}

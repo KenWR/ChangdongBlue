@@ -1,0 +1,73 @@
+#home table {
+  width: 700px;
+}
+
+#home tr {
+  height: 50px;
+}
+
+#home td {
+  height: 60px;
+  text-align: center;
+  vertical-align: middle;
+  border-bottom: 1px #d8d8d8 dashed;
+}
+
+#home .lt_wrap {
+  background-color: #fff;
+  width: 700px;
+  height: 443px;
+  float: left;
+  margin: 10px 5px 5px 10px;
+  border: 1px solid #d8d8d8;
+}
+
+#home .rt_wrap {
+  background-color: #fff;
+  width: 700px;
+  height: 443px;
+  float: right;
+  margin: 10px 0px 5px 5px;
+  border: 1px solid #d8d8d8;
+}
+
+#home .lb_wrap {
+  background-color: #fff;
+  width: 700px;
+  height: 443px;
+  float: left;
+  margin: 5px 5px 10px 10px;
+  border: 1px solid #d8d8d8;
+}
+
+#home .rb_wrap {
+  background-color: #fff;
+  width: 700px;
+  height: 443px;
+  float: right;
+  margin: 5px 0px 5px 10px;
+  border: 1px solid #d8d8d8;
+}
+/* ======================================== */
+#home .lt_wrap .name {
+  font-size: 48px;
+  text-align: center;
+  margin-top: 150px;
+}
+#home .title_wrap {
+  width: 700px;
+  height: 60px;
+  padding-top: 15px;
+  font-size: 30px;
+
+  border-bottom: 1px #d8d8d8 dashed;
+}
+#home .title_wrap a {
+  margin-left: 10px;
+}
+#home table tr td a {
+  display: block;
+  margin-top: 10px;
+  margin-left: 20px;
+  font-size: 20px;
+}

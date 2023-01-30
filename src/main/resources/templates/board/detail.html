@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html
+  lang="ko-KR"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+  th:replace="~{layout/comm-layout :: commLayout(~{::head},~{::main})}"
+>
+  <head>
+    <title>Teacher Board Page</title>
+    <link rel="stylesheet" th:href="@{/css/board/board.css}" />
+  </head>
+  <body>
+    <main>
+      <table class="board">
+        <tr th:each="e:${eBoard}" class="d-title">
+          <td>제목 : [[${e.title}]] 작성자 : [[${e.employeeName}]]</td>
+        </tr>
+        <tr th:each="e:${eBoard}" class="d-content">
+          <td>[[${e.content}]]</td>
+        </tr>
+        <tr class="d-reply">
+          <td>댓글영역</td>
+        </tr>
+      </table>
+    </main>
+  </body>
+</html>

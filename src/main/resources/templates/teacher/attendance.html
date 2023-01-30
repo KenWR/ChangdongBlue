@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html
+  lang="ko-KR"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+  th:replace="~{layout/comm-layout :: commLayout(~{::head},~{::main})}"
+>
+  <head>
+    <title>Attendance Page</title>
+    <link rel="stylesheet" href="/css/teacher/attendance.css" />
+    <script type="text/javascript" src="js/teacher/attendance.js"></script>
+    <!--/*-->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"
+      integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"
+      integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!--*/-->
+  </head>
+  <body>
+    <main>
+      <div class="attendence_title_wrap">
+        <div class="attendence_title_inner mt-3">
+          <h2 class="attendence_title">출석관리</h2>
+        </div>
+      </div>
+      <div class="attendence_search_wrap mt-3">
+        <table class="table">
+          <tbody>
+            <tr>
+              <th scope="row" class="table-active table-th-scope">강의선택</th>
+              <td>
+                <div class="dropdown">
+                  <button class="btn btn-light dropdown-toggle" data-toggle="dropdown">강의선택</button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">JAVA</a>
+                    <a class="dropdown-item" href="#">C</a>
+                    <a class="dropdown-item" href="#">C#</a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="table-active">날짜</th>
+              <td>
+                <input class="datepicker" />
+                부터
+                <input class="datepicker" />
+                까지
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="table-active">출석여부</th>
+              <td>
+                <div class="attendence_check_wrap ml-4">
+                  <div class="attendence_check">
+                    <input class="form-check-input" type="radio" name="attendanceCheck" id="attendenceCheck1" value="option1" />
+                    <label class="form-check-label" for="attendenceCheck1"> 전체 </label>
+                  </div>
+                  <div class="attendence_check">
+                    <input class="form-check-input" type="radio" name="attendanceCheck" id="attendenceCheck2" value="option2" />
+                    <label class="form-check-label" for="attendenceCheck2"> 출석 </label>
+                  </div>
+                  <div class="attendence_check">
+                    <input class="form-check-input" type="radio" name="attendanceCheck" id="attendenceCheck3" value="option3" />
+                    <label class="form-check-label" for="attendenceCheck3"> 결석 </label>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="table-active">검색</th>
+              <td>
+                <div class="input-group">
+                  <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                  <button type="button" class="btn btn-outline-primary">search</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="attendence_board_wrap">
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">회원명</th>
+              <th scope="col">회원아이디</th>
+              <th scope="col">학습시간</th>
+              <th scope="col">진도율</th>
+              <th scope="col">출석일</th>
+              <th scope="col">출석여부</th>
+              <th scope="col">출석수정</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>1hr</td>
+              <td>100%</td>
+              <td>23.01.09</td>
+              <td>출석</td>
+              <td>
+                <button type="button" class="btn btn-outline-primary">출석</button>
+                <button type="button" class="btn btn-outline-primary">결석</button>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>abc</td>
+              <td>abcd1234</td>
+              <td>10hr</td>
+              <td>60%</td>
+              <td>23.01.09</td>
+              <td>지각</td>
+              <td>
+                <button type="button" class="btn btn-outline-primary">출석</button>
+                <button type="button" class="btn btn-outline-primary">결석</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </body>
+</html>

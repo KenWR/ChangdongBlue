@@ -1,0 +1,60 @@
+main table {
+  border: 0.1em solid black;
+  text-align: center;
+}
+td {
+  border: 0.1em solid black;
+}
+.tit,
+.writer,
+.phone,
+.date,
+.content {
+  background-color: grey;
+  vertical-align: middle;
+}
+main .sign {
+  width: 20%;
+  margin-left: 22%;
+  margin-bottom: 10px;
+}
+th {
+  vertical-align: middle;
+}
+.sign .none td span {
+  color: white;
+}
+
+main table input {
+  width: 100%;
+}
+main div {
+  margin-top: 20px;
+  margin-left: 10%;
+}
+main div button {
+  margin-left: 10%;
+}
+p {
+  display: none;
+}
+main table tr td.content span {
+  margin-top: 10px;
+}
+.button {
+  background-color: rgb(110, 110, 110);
+  border: none;
+  border-radius: 10%;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button:hover {
+  background: rgb(190, 190, 190);
+  cursor: pointer;
+  color: white;
+}

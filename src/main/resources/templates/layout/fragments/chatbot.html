@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <th:block>
+    <aside id="chat-bot">
+      <h1></h1>
+      <div class="wrap">
+        <button type="button" id="btn-chat-open" onclick="openChat()">
+          <img src="/images/icons/leaf-solid.svg" style="height: 40px; width: 40px; background: none" />
+        </button>
+        <dl id="chat-disp">
+          <dt id="chat-header">
+            <span>창동 챗봇</span>
+            <span class="btn-wrap">
+              <button type="button" id="btn-chat-close" onclick="disconnect()">X</button>
+            </span>
+          </dt>
+          <dd id="chat-content"></dd>
+          <dd id="chat-question" class="flex between">
+            <input type="text" id="question" placeholder="질문을 입력하세요" />
+            <button type="button" id="btn-msg-send" onclick="btnMsgSendClicked()">
+              <img src="/images/icons/leaf-solid.svg" style="height: 30px; width: 30px" />
+            </button>
+          </dd>
+        </dl>
+      </div>
+    </aside>
+  </th:block>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html
+  lang="ko-KR"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+  th:replace="~{layout/comm-layout :: commLayout(~{::head},~{::main})}"
+>
+  <head>
+    <link rel="stylesheet" th:href="@{/css/layout/sihyun.css}" />
+    <link rel="stylesheet" type="text/css" href="/css/common/reg.css" />
+    <title>강의정보</title>
+  </head>
+  <body>
+    <!-- <header th:replace="layout/header::header"></header> -->
+    <main>
+      <form th:action="@{/info-course}" method="post">
+        <table>
+          <tr>
+            <td>강의명</td>
+            <td><input type="text" name="title" /></td>
+          </tr>
+          <tr>
+            <td>강의실 번호</td>
+            <td><input type="text" name="roomNum" /></td>
+          </tr>
+          <tr>
+            <td>최소인원</td>
+            <td><input type="text" name="minSt" /></td>
+          </tr>
+          <tr>
+            <td>최대인원</td>
+            <td><input type="text" name="maxSt" /></td>
+          </tr>
+          <tr>
+            <td>수강료</td>
+            <td><input type="text" name="price" /></td>
+          </tr>
+          <tr>
+            <td>시작 날짜</td>
+            <td><input type="date" name="startDate" /></td>
+          </tr>
+          <tr>
+            <td>종료 날짜</td>
+            <td><input type="date" name="endDate" /></td>
+          </tr>
+          <tr>
+            <td>선생님</td>
+            <td><input type="number" name="teacherNo" /></td>
+          </tr>
+        </table>
+        <button class="button">등록</button>
+      </form>
+    </main>
+  </body>
+</html>

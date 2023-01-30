@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html
+  lang="ko-KR"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+  th:replace="~{layout/comm-layout :: commLayout(~{::head},~{::main})}"
+>
+  <head>
+    <title>학생 출결 관리 페이지</title>
+
+    <script th:src="@{/js/attendance/attSt.js}"></script>
+
+    <script th:inline="javascript">
+      $(function () {
+        var now = new Date();
+        console.log(now);
+        $("input[name=day]").attr("value", now);
+        var stds = $(".std"); //tr태그들 복수선택자
+        //여러개이니 한개씩 계산처리
+        $.each(stds, function (index, item) {
+          //tr태그중 1개
+          var onTime = $(item).find(".onTime").text();
+          console.log(onTime);
+          var offTime = $(item).find(".offTime").text();
+
+          var inTime = String(onTime);
+          var outTime = String(offTime);
+          if (inTime.length == 5) {
+            inTime += ":00";
+            console.log(inTime);
+          }
+          if (outTime.length == 5) {
+            outTime += ":00";
+            console.log(outTime);
+          }
+          var ipSil = "09:40:00";
+          var tueSil = "15:50:00";
+          var regex = /[^0-9]/g;
+          var realOnTime = parseInt(inTime.replace(regex, "")); //onTime 문자열제거
+          var realOutTime = parseInt(outTime.replace(regex, "")); //onTime 문자열제거
+          var GoodOnTime = parseInt(ipSil.replace(regex, "")); //정해진 출석시간 문자열제거
+          var GoodOutTime = parseInt(tueSil.replace(regex, "")); //정해진 출석시간 문자열제거
+
+          if (realOnTime <= GoodOnTime || realOutTime >= GoodOutTime) {
+            $(item).find("input:radio[id='on']:radio[value='출석']").prop("checked", true);
+            console.log(realOutTime + "  <<<<<<>>>");
+          }
+          if (realOnTime >= GoodOnTime || realOutTime <= GoodOutTime) {
+            $(item).find("input:radio[id='early']:radio[value='조퇴']").prop("checked", true);
+            console.log(GoodOutTime + "  <<<<<<>>>");
+          }
+        });
+      });
+    </script>
+
+    <style type="text/css">
+      table {
+        width: 1000px;
+        border: 1px solid #444;
+      }
+      tr {
+        height: 60px;
+        border: 1px solid #444;
+      }
+      td {
+        height: 60px;
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid #444;
+      }
+      input[type="radio"] {
+        display: none;
+      }
+      input[type="radio"] + span {
+        display: inline-block;
+        padding: 15px 10px;
+        border: 1px solid #dfdfdf;
+        background-color: #ffffff;
+        text-align: center;
+        cursor: pointer;
+      }
+      input[type="radio"]:checked + span {
+        background-color: #113a6b;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <!--학생리스트출력-->
+      <table>
+        <thead>
+          <tr>
+            <td>과정명</td>
+            <td>강의실</td>
+            <td>시작일</td>
+            <td>종료일</td>
+            <td>기타</td>
+          </tr>
+        </thead>
+
+        <tbody id="students-list">
+          <tr th:each="c : ${course}" class="std">
+            <td>
+              <a th:href="|/check/att/${c.no}|" th:text="${c.title}">과정명</a>
+            </td>
+            <td th:text="${c.roomNum}">강의실</td>
+            <td class="onTime" th:text="${c.startDate}">시작일</td>
+            <td class="offTime" th:text="${c.endDate}">종료일</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>

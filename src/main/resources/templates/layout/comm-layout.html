@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html th:fragment="commLayout(links,main)">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="_csrf_header" th:content="${_csrf.headerName}" />
+    <meta name="_csrf" th:content="${_csrf.token}" />
+    <script th:inline="javascript">
+      const header = document.querySelector("meta[name='_csrf_header']").content;
+      const token = document.querySelector("meta[name='_csrf']").content;
+      const headers = { header: header, "X-CSRF-Token": token };
+    </script>
+    <link rel="stylesheet" th:href="@{/css/common/reset.css}" />
+    <link rel="stylesheet" th:href="@{/css/common/common.css}" />
+    <link rel="stylesheet" th:href="@{/css/layout/topmenu.css}" />
+    <link rel="stylesheet" th:href="@{/css/layout/sidebar.css}" />
+    <link rel="stylesheet" th:href="@{/css/layout/index.css}" />
+    <link rel="stylesheet" th:href="@{/css/chatbot/chat-bot.css}" />
+    <link rel="stylesheet" th:href="@{/webjars/AdminLTE/dist/css/adminlte.min.css}" />
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+    <script th:src="@{/js/layout/index.js}"></script>
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <script th:src="@{/webjars/AdminLTE/dist/js/adminlte.min.js}"></script>
+    <script th:src="@{/js/common/common.js}"></script>
+    <script defer th:src="@{/js/attendance/attET.js}"></script>
+    <th:block th:replace="${links}" />
+    <!--/*-->
+    <title>공통 레이아웃</title>
+    <!--*/-->
+  </head>
+  <body>
+    <th:block th:replace="~{/layout/fragments/comm-menu-top :: menuTop}" />
+    <th:block th:replace="${main}" />
+    <th:block th:replace="~{/layout/fragments/comm-menu-side :: menuSide}" />
+    <script defer th:src="@{/js/chatbot/chatbot.js}"></script>
+    <th:block th:replace="~{/layout/fragments/chatbot :: #chat-bot}" />
+  </body>
+</html>

@@ -1,0 +1,68 @@
+.wrap-title:hover .wrap-sub {
+  display: block;
+}
+.wrap-title {
+  cursor: pointer;
+  font-size: 20px;
+}
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.wrap-sub {
+  margin-left: -35px;
+  display: none;
+}
+#go-to-work {
+  background-color: rgb(110, 110, 110);
+  margin-top: 5px;
+  border: none;
+  border-radius: 10%;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+#go-to-work:hover {
+  background: rgb(190, 190, 190);
+  cursor: pointer;
+  color: white;
+}
+#go-to-home {
+  background-color: rgb(110, 110, 110);
+  margin-top: 5px;
+  border: none;
+  border-radius: 10%;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+#go-to-home:hover {
+  background: rgb(190, 190, 190);
+  cursor: pointer;
+  color: white;
+}
+#signout {
+  background-color: rgb(110, 110, 110);
+  margin-top: 10px;
+  border: none;
+  border-radius: 10%;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+#signout:hover {
+  background: rgb(190, 190, 190);
+  cursor: pointer;
+  color: white;
+}

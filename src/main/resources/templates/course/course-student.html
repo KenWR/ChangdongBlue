@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html
+  lang="ko-KR"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+  th:replace="~{layout/comm-layout :: commLayout(~{::head},~{::main})}"
+>
+  <head>
+    <title>Insert title here</title>
+  </head>
+  <h1>테스트</h1>
+  <body>
+    <main>
+      <table>
+        <tbody>
+          <tr th:each="list : ${list}">
+            <td th:text="${list.no}"></td>
+            <td th:text="${list.name}"></td>
+            <td th:text="${list.addr}"></td>
+            <td th:text="${list.phone}"></td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>

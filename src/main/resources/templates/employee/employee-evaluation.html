@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html
+  lang="ko-KR"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+  th:replace="~{layout/comm-layout :: commLayout(~{::head},~{::main})}"
+>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/css/evaluation/evaluation.css" />
+    <title>평가 정보 페이지</title>
+  </head>
+  <body>
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <th>사원번호</th>
+            <th>평가내역</th>
+            <th>평가점수</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="no" th:each="eva : ${evalList}">
+            <td th:text="${eva.empNo}"></td>
+            <td th:text="${eva.question}"></td>
+            <td th:text="${eva.score}"></td>
+          </tr>
+        </tbody>
+      </table>
+      <tr>
+        <td>
+          <form id="eva-form" th:action="@{/emp/evaluation}" method="post">
+            <div>
+              <li>사원번호</li>
+              <input type="text" name="empNo" placeholder="사원번호" />
+            </div>
+            <div>
+              <li>평가내역</li>
+              <input id="ques" type="text" name="question" />
+            </div>
+            <div>
+              <li>평가점수</li>
+              <input type="text" name="score" placeholder="평가 점수" />
+            </div>
+            <button>등록</button>
+          </form>
+        </td>
+      </tr>
+    </main>
+  </body>
+</html>

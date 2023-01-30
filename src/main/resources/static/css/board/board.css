@@ -1,0 +1,19 @@
+.board {
+  margin-top: 10px;
+  width: 600px;
+  border-collapse: collapse;
+  font-size: 18px;
+}
+.board .title {
+  background-color: #e0e0e0;
+}
+.board .content {
+  border-bottom: 1px solid #e0e0e0;
+}
+.d-title,
+.d-content,
+.d-reply {
+  width: 600px;
+  height: auto;
+  border-bottom: 1px solid #e0e0e0;
+}

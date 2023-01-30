@@ -1,0 +1,27 @@
+#topmenu {
+  width: 1650px;
+  height: 50px;
+  display: block;
+  background-color: rgb(110, 110, 110);
+}
+
+#topmenu .t_menu {
+  list-style: none;
+}
+#topmenu .t_menu li {
+  float: left;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+#topmenu .t_menu li a {
+  padding: 12px 30px;
+  display: block;
+  color: #000;
+  text-decoration: none;
+}
+
+#topmenu .t_menu li a:hover {
+  background: #333;
+  color: #fff;
+}

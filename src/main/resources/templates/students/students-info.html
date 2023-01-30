@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html
+  lang="ko-KR"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+  th:replace="~{layout/comm-layout :: commLayout(~{::head},~{::main})}"
+>
+  <head>
+    <link rel="stylesheet" th:href="@{/css/layout/sihyun.css}" />
+    <link rel="stylesheet" type="text/css" href="/css/common/reg.css" />
+    <title>a</title>
+  </head>
+  <body>
+    <header th:replace="layout/header::header"></header>
+    <main>
+      <form th:action="@{/fs}" method="post">
+        <table>
+          <tr>
+            <td>학생 이름</td>
+            <td><input type="text" name="name" /></td>
+          </tr>
+          <tr>
+            <td>이메일</td>
+            <td><input type="text" name="email" /></td>
+          </tr>
+          <tr>
+            <td>연락처</td>
+            <td><input type="text" name="phone" /></td>
+          </tr>
+          <tr>
+            <td>주소</td>
+            <td><input type="text" name="addr" /></td>
+          </tr>
+          <tr>
+            <td>생년월일</td>
+            <td><input type="date" name="dateOfBirth" /></td>
+          </tr>
+        </table>
+        <button class="button">등록</button>
+      </form>
+    </main>
+  </body>
+</html>

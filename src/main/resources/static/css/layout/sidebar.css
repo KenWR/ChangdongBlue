@@ -1,0 +1,46 @@
+#sidebar {
+  float: left;
+  width: 200px;
+  height: 920px;
+}
+
+#sidebar .menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 200px;
+  height: 920px;
+  overflow: auto;
+  background-color: #e0e0e0;
+}
+
+#sidebar .menu ul li a {
+  padding: 8px 15px 8px 15px;
+  display: block;
+  color: #000;
+  font-weight: bold;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+#sidebar .menu ul li a:hover {
+  background: #333;
+  color: #fff;
+}
+
+/* ======================================== */
+#sidebar .menu .s_menu1 {
+  display: none;
+}
+#sidebar .menu .s_menu2 {
+  display: none;
+}
+#sidebar .menu .s_menu3 {
+  display: none;
+}
+#sidebar .menu .s_menu4 {
+  display: none;
+}
+#sidebar .menu .s_menu5 {
+  display: none;
+}

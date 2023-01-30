@@ -1,0 +1,31 @@
+main {
+  padding-top: 40px;
+  padding-left: 40px;
+}
+table {
+  padding: 10px;
+  border: 1px solid;
+}
+tr > td {
+  border: 1px solid;
+  text-align: center;
+  padding: 20px;
+}
+tr > th {
+  font-size: 16px;
+  background-color: rgb(110, 110, 110);
+  border: 1px solid;
+  margin: auto;
+  padding: 10px 20px 10px 20px;
+}
+#eva-form {
+  padding-top: 20px;
+  margin: auto;
+}
+button {
+  margin: 15px;
+}
+#ques {
+  width: 500px;
+  height: 500px;
+}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html
+  lang="ko-KR"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+  th:replace="~{layout/comm-layout :: commLayout(~{::head},~{::main})}"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <title>전자문서결재관리</title>
+  </head>
+  <body>
+    <main>
+      <form method="post" th:action="@{/document/update}"></form>
+    </main>
+  </body>
+</html>

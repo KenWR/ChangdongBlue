@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<th:block th:fragment="menuSide">
+  <link rel="stylesheet" type="text/css" href="/css/common/menu-top.css" />
+  <div id="sidebar">
+    <section class="menu">
+      <ul>
+        <li>
+          <button id="go-to-work">출근</button>
+          <button id="go-to-home">퇴근</button>
+          <form th:action="@{/signout}" method="post"><button id="signout">로그아웃</button></form>
+        </li>
+      </ul>
+      <ul class="s_menu1">
+        <li>
+          <a href="/">공지사항</a>
+        </li>
+        <li>
+          <a href="/board/teacher">선생님게시판</a>
+        </li>
+        <li>
+          <a href="/board/employee">직원게시판</a>
+        </li>
+      </ul>
+      <ul class="s_menu2">
+        <li>
+          <a href="/">네이버</a>
+        </li>
+      </ul>
+      <ul class="s_menu3">
+        <li class="wrap-title">
+          <a href="/emp/reg/absence">휴가/결근처리</a>
+        </li>
+        <li class="wrap-title">
+          <a href="/calendar/calendar">일정보기</a>
+        </li>
+        <li class="wrap-title">
+          강사
+          <ul class="wrap-sub">
+            <li><a href="/teacher/reg">신규강사등록</a></li>
+            <li><a href="/teacher/list">강사명단</a></li>
+          </ul>
+        </li>
+        <li class="wrap-title">
+          직원
+          <ul class="wrap-sub">
+            <li><a href="/emp/reg">신규직원등록</a></li>
+            <li><a href="/emp/list">직원명단</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="s_menu4">
+        <li class="wrap-title">
+          <a href="/students/course/on">학생수강등록</a>
+        </li>
+        <li class="wrap-title">
+          <a href="/students/att/on">학생출석현황</a>
+        </li>
+        <li class="wrap-title">
+          학생
+          <ul class="wrap-sub">
+            <li><a href="/students-info">신규학생등록</a></li>
+            <li><a href="/stu">학생명단</a></li>
+          </ul>
+        </li>
+        <li class="wrap-title">
+          강의
+          <ul class="wrap-sub">
+            <li><a href="/course-info">신규강의개설</a></li>
+            <li><a href="/course">강의목록</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="s_menu5">
+        <li>
+          <a href="/doc/reg">근태신청서</a>
+        </li>
+        <li>
+          <a href="/docList">전체문서검색</a>
+        </li>
+        <li>
+          <a href="/docDetail">문서결제</a>
+        </li>
+        <li>
+          <a href="/">내가올린결재</a>
+        </li>
+      </ul>
+    </section>
+  </div>
+</th:block>
