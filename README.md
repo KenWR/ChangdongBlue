@@ -1,4 +1,9 @@
-# ChangDong_Blue
+https://github.com/KenWR/Chandong_Blue_Home
+
+챗봇 완성본
+
+
+ChangDong_Blue
 
 ## 01/25 할일
 
